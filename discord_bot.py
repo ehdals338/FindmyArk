@@ -27,7 +27,10 @@ async def on_message(message):
     #tmpContent = bsObject.find_all(class_='level-info__item')
     tmpContent = bsObject.find_all("div", {"class":"level-info__item"})[0].find_all("span")[1].text
 
-    print(tmpContent)
+    if tmpContent:
+        print(tmpContent)
+    else:
+        print("Not Found")
 
     #if the bot sent the mesage
     if message.author.bot: 
@@ -44,6 +47,6 @@ async def on_message(message):
         await channel.send('안녕')
     else:
         #print the web crawling part by LostArk homepage
-        await channel.send("<@"+str(message.author.id)+"> : 레벨\""+message.content[1:]+"\""+str(tmpContent))
+        await channel.send("<@"+str(message.author.id)+"> : \""+message.content[1:]+"\" " +str(tmpContent))
 
 client.run(token)
