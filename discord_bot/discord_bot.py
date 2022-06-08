@@ -6,7 +6,7 @@ from urllib import parse
 client = discord.Client()
 
 #add the test_project bot token
-token = "OTgxNjAwMDQwODk4Mzk2MjMw.GteYmv.fVR3a3gBef1H2J5zmX-lhOduza1DcbJVhMspw0"
+token = "OTg0MTI1NTQyNDgxNjcwMjA0.GdE6KY.sW9_N4ys2g1zLPhfDVeaxDPqN4tSkGRIs3C_D0"
 
 #when the bot started, run this part
 @client.event
