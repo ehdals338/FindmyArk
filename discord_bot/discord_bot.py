@@ -6,6 +6,7 @@ from urllib import parse
 client = discord.Client()
 
 #add the test_project bot token
+#must change this token!!!!!
 token = "OTg0MTI1NTQyNDgxNjcwMjA0.GdE6KY.sW9_N4ys2g1zLPhfDVeaxDPqN4tSkGRIs3C_D0"
 
 #when the bot started, run this part
@@ -25,13 +26,13 @@ async def on_message(message):
     html = urlopen(url)
     bsObject = BeautifulSoup(html, "html.parser")
     #tmpContent = bsObject.find_all(class_='level-info__item') 원정대, 전투 레벨
-    #tmpContent = bsObject.find_all("div", {"class":"level-info__item"})[0].find_all("span")[1].text
-    
+    tmpContent = bsObject.find_all("div", {"class":"level-info__item"})[0].find_all("span")[1].text
     #tmpContent = bsObject.find_all(class_='level-info2__item') 아이템 레벨
-    tmpContent = bsObject.find_all("div", {"class":"level-info2__item"})[0].find_all("span")[1].text
+    item_tmpContent = bsObject.find_all("div", {"class":"level-info2__item"})[0].find_all("span")[1].text
 
     if tmpContent:
         print(tmpContent)
+        print(item_tmpContent)
     else:
         print("Not Found")
 
@@ -50,6 +51,7 @@ async def on_message(message):
         await channel.send('안녕')
     else:
         #print the web crawling part by LostArk homepage
-        await channel.send("<@"+str(message.author.id)+"> : \""+message.content[1:]+"\" " +str(tmpContent))
+        await channel.send("<@"+str(message.author.id)+"> : \""+message.content[1:]+"\" ")
+        await channel.send("전투: "+str(tmpContent)+" 아이템: "+str(item_tmpContent))
 
 client.run(token)
