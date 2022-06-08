@@ -2,7 +2,7 @@
 
 ## 시스템 환경
 Python 3.9.6   
-
+   
 ## 사전 설치
 #### cmd 환경에서 아래 명령어 입력
 ```   
@@ -31,4 +31,12 @@ ex) https://discordapp.com/oauth2/authorize?client_id=123456789123456789&scope=b
 ex) !으아아아악   
    
 봇의 답변은 아래와 같이 출력되면 정상이다.   
-@사용자아이디: "으아아아악" Lv.9999.99
+@사용자아이디: "으아아아악" Lv.9999.99   
+   
+## 주의사항
+```python
+#add the test_project bot token
+token = "OTg0MTI1NTQyNDgxNjcwMjA0.GdE6KY.sW9_N4ys2g1zLPhfDVeaxDPqN4tSkGRIs3C_D0"
+```   
+   
+이 파트는 사람마다 token 값이 다르기 때문에 꼭 discord 봇에서 사전 설정해야합니다.
